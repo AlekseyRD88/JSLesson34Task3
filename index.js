@@ -17,9 +17,10 @@ function createUser(userData) {
       'Content-Type': 'application/json;charset=utf-8',
     },
     body: JSON.stringify(userData),
-  }).then((response) => response.body);
+  })
+    .then((response) => response.body)
+    .then((result) => alert(result));
 }
 buttonSubmit.addEventListener('click', createUser);
 
-const input = document.querySelector('input');
-input.value = '';
+formElem.value = '';
