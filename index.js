@@ -2,15 +2,6 @@ const baseUrl = 'https://629649eb810c00c1cb72fc33.mockapi.io/api/v1/users';
 const buttonSubmit = document.querySelector('.submit-button');
 const formElem = document.querySelector('.login-form');
 
-/*const validate = (formElem) => {
-  if (formElem.reportValidity()) {
-    buttonSubmit.disabled = false;
-  } else {
-    buttonSubmit.disabled = true;
-  }
-};
-
-formElem.addEventListener('input', validate);*/
 formElem.addEventListener('input', function () {
   if (formElem.reportValidity()) {
     buttonSubmit.disabled = false;
@@ -19,8 +10,8 @@ formElem.addEventListener('input', function () {
   }
 });
 
-function onCreateUser(event) {
-  const formData = event.Object.fromEntries(new FormData(formElem));
+function onCreateUser() {
+  const formData = Object.fromEntries(new FormData(formElem));
   const userData = JSON.stringify(formData);
   return fetch(baseUrl, {
     method: 'POST',
