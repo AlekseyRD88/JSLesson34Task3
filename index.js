@@ -23,4 +23,5 @@ function onCreateUser(event) {
     .then((response) => response.body)
     .then((result) => alert(result));
 }
-formElem.addEventListener('submit', onCreateUser);
+buttonSubmit.addEventListener('submit', onCreateUser);
+document.querySelectorAll('input').value = '';
