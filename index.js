@@ -11,7 +11,7 @@ formElem.addEventListener('input', function () {
 });
 
 function onCreateUser(event) {
-  const data = Object.fromEntries(new FormData(event.target.formElem).entries());
+  const data = Object.fromEntries(new FormData(event.target).Entries());
   const userData = JSON.stringify(data);
   return fetch(baseUrl, {
     method: 'POST',
@@ -23,4 +23,4 @@ function onCreateUser(event) {
     .then((response) => response.body)
     .then((result) => alert(result));
 }
-buttonSubmit.addEventListener('submit', onCreateUser);
+formElem.addEventListener('submit', onCreateUser);
