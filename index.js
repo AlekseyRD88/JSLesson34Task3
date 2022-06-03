@@ -13,7 +13,6 @@ formElem.addEventListener('input', function () {
 function onCreateUser(event) {
   const data = Object.fromEntries(new FormData(event.target.formElem));
   const userData = JSON.stringify(data);
-  console.log(userData);
   return fetch(baseUrl, {
     method: 'POST',
     headers: {
