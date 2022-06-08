@@ -14,14 +14,13 @@ function onCreateUser(event) {
   event.preventDefault();
   const formData = new FormData(formElem);
   const values = Object.fromEntries(formData.entries());
-  const userData = JSON.stringify(values);
   //console.log(values);
   return fetch(baseUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
     },
-    body: JSON.stringify(userData),
+    body: JSON.stringify(values),
   })
     .then((response) => response.body)
     .then((result) => alert(result));
