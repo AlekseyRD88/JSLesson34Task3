@@ -22,8 +22,10 @@ function onCreateUser(event) {
     },
     body: JSON.stringify(values),
   })
-    .then((response) => response.body)
-    .then((result) => alert(result));
+    .then((response) => response.json())
+    .then((data) => {
+      alert(JSON.stringify(data));
+      formElem.reset();
+    });
 }
 formElem.addEventListener('submit', onCreateUser);
-document.querySelectorAll('input').value = '';
